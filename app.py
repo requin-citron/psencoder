@@ -10,7 +10,7 @@ def hello():
     ret = None
     if cmd is not None:
        ret = "powershell.exe -exec bypass -enc " + base64.b64encode(cmd.encode('utf-16-le')).decode()
-    return render_template("magie.html", ret=ret)
+    return render_template("magie.html", ret=ret, cmd=cmd)
 
 
 if __name__ == "__main__":

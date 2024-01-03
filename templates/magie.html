@@ -47,7 +47,7 @@
 </head>
 <body>
   <form action="/" method="get">
-    <textarea id="cmd" name="cmd" rows="30" cols="80"></textarea><br>
+    <textarea id="cmd" name="cmd" rows="30" cols="80">{% if cmd %}{{cmd}}{% endif %}</textarea><br>
     <input type="submit" value="Envoyer">
   </form>
 </br>
