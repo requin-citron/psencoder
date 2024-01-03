@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PsEncoder</title>
+</head>
+<body>
+  <form action="/" method="get">
+    <textarea id="cmd" name="cmd" rows="30" cols="80"></textarea><br>
+    <input type="submit" value="Envoyer">
+  </form>
+  {% if ret %}
+     <h3>{{ret}}</h3>
+  {% endif %}
+
+</body>
+</html>
