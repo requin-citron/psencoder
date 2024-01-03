@@ -3,6 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+      body {
+        background-image: url('https://media.senscritique.com/media/000018323452/1200/charlie_the_unicorn.jpg');
+        display: flex; /* Utilisation d'un flexbox pour centrer verticalement et horizontalement */
+        justify-content: center; /* Centrer horizontalement */
+        align-items: center; /* Centrer verticalement */
+        height: 100vh; /* Utiliser 100% de la hauteur de la fenêtre */
+        margin: 0; /* Supprimer les marges par défaut du corps */
+        flex-direction: column;
+      }
+  
+  
+    /* Optionnel : pour centrer tous les éléments en bloc à l'intérieur du corps */
+    body > * {
+      margin: 0 auto; /* Centrer horizontalement */
+      display: block; /* Pour s'assurer que les éléments sont affichés en bloc */
+    }
+
+    textarea {
+      opacity: 0.6; /* Setting opacity to 60% */
+      width: 80vw; /* 80% of viewport width */
+      height: 60vh; /* 80% of viewport height */
+    }
+    
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    </style>
+    <script>
+      function copyToClipboard() {
+        const outputTextArea = document.getElementById('outputText');
+        outputTextArea.select();
+        document.execCommand('copy');
+      }
+    </script>
+
     <title>PsEncoder</title>
 </head>
 <body>
@@ -10,8 +50,11 @@
     <textarea id="cmd" name="cmd" rows="30" cols="80"></textarea><br>
     <input type="submit" value="Envoyer">
   </form>
+</br>
   {% if ret %}
-     <h3>{{ret}}</h3>
+  <textarea id="outputText" rows="4" cols="50">{{ret}}</textarea><br>
+  <button onclick="copyToClipboard()">Copy Text</button>
+
   {% endif %}
 
 </body>
